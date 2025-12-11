@@ -1,6 +1,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { GoogleGenAI } from "@google/genai";
+// API wrapper in src
+import { sendChat } from "./api/chat";
 import { Send, Paperclip, Image as ImageIcon, Cpu, FileText, Package, Activity, Loader, AlertCircle, Calendar, CheckSquare, Users, BarChart3, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -189,16 +190,7 @@ export const CAATPage = () => {
     setIsLoading(true);
 
     try {
-      const res = await fetch('/.netlify/functions/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ input })
-      });
-
-      if (!res.ok) {
-        throw new Error(`Backend error: ${res.status}`);
-      }
-      const data = await res.json();
+      const data = await sendChat(input);
 
       const aiMsg: Message = {
         id: (Date.now() + 1).toString(),
