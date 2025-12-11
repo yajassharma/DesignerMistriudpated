@@ -177,7 +177,7 @@ export const CAATPage = () => {
   const handleSend = async () => {
     if (!input.trim() || isLoading) return;
 
-    let apiKey = '';
+    let apiKey = 'AIzaSyDC7hGRWBs8Fxotl5-5BUy5Tf83ZQdkYLk';
     try {
         // Safe access to process.env for browser environments
         if (typeof process !== 'undefined' && process.env && process.env.API_KEY) {
