@@ -95,13 +95,7 @@ const servicesData: ServiceItem[] = [
 
 const MobileServiceCardStack: React.FC<{ service: ServiceItem; index: number }> = ({ service, index }) => {
   return (
-    <div 
-      className="sticky mb-6 px-1" 
-      style={{ 
-        top: `${80 + index * 10}px`, // Stacking offset
-        zIndex: index
-      }}
-    >
+    <div className="relative mb-8 px-1">
        <div className="relative mx-auto w-full">
           <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl shadow-slate-200/50 h-[450px] flex flex-col border border-slate-200">
               
