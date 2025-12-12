@@ -16,7 +16,7 @@ interface ServiceItem {
 const servicesData: ServiceItem[] = [
   { 
     id: 'construction', 
-    title: "Construction Cell", 
+    title: "Construction", 
     subtitle: "Execution",
     desc: "We manage the entire lifecycle of your build, from excavation to the final slab. Our automated BOQ engine ensures every bag of cement is tracked.", 
     features: ["Automated BOQ", "Daily Drone Feeds", "Timeline Adherence"],
